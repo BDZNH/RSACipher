@@ -8,6 +8,7 @@ public:
     RSACipher(const std::string& pemKey, bool isPrivateKey = true);
     int Encrypt(const unsigned char* in, size_t inlen, std::vector<uint8_t>& out);
     int Decrypt(const unsigned char* in, size_t inlen, std::vector<uint8_t>& out);
+    std::string GetLastError() { return mLastErrorMsg; }
 private:
     int PublicEncrypt(const unsigned char* in, size_t inlen, std::vector<uint8_t>& out);
     int PublicDecrypt(const unsigned char* in, size_t inlen, std::vector<uint8_t>& out);
